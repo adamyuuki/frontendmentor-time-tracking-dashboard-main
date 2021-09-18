@@ -1,0 +1,311 @@
+:root {
+	--Blue: hsl(246, 80%, 60%);
+	--Light-red-orange: hsl(15, 100%, 70%); /*  (work) */
+	--Soft-blue: hsl(195, 74%, 62%); /* (play)*/
+	--Light-red: hsl(348, 100%, 68%); /* (study)*/
+	--Lime-green: hsl(145, 58%, 55%); /* (exercise)*/
+	--Violet: hsl(264, 64%, 52%); /*(social)*/
+	--Soft-orange: hsl(43, 84%, 65%); /*(self care)*/
+	--Very-dark-blue: hsl(226, 43%, 10%);
+	--Dark-blue: hsl(235, 46%, 20%);
+	--Desaturated-blue: hsl(235, 45%, 61%);
+	--Pale-Blue: hsl(236, 100%, 87%);
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Rubik", sans-serif;
+}
+
+body {
+	width: 100vw;
+	background-color: var(--Very-dark-blue);
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+	margin: 5.5rem 0;
+}
+
+.person {
+	width: 23rem;
+	height: 14rem;
+	background-color: var(--Dark-blue);
+	border-radius: 1rem;
+}
+
+.cell {
+	border-radius: 1rem;
+	width: 23rem;
+	height: 11rem;
+
+	position: relative;
+}
+
+.person-data {
+	padding: 2rem;
+	display: flex;
+	/* align-items: center; */
+	border-radius: 1rem;
+	background-color: var(--Blue);
+}
+
+.report-name {
+	margin-left: 1.5rem;
+}
+
+.report-name p {
+	font-size: 1rem;
+	color: var(--Pale-Blue);
+}
+
+.report-name p:first-child {
+	margin-bottom: 0.5rem;
+}
+
+.name {
+	font-size: 1.5rem;
+	color: white;
+	font-weight: 300;
+}
+
+.person-data img {
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
+	border: 2px solid white;
+}
+
+.buttons {
+	height: 5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+	margin: auto;
+}
+
+.period-btn {
+	text-decoration: none;
+	background-color: transparent;
+	border: none;
+	color: var(--Desaturated-blue);
+	font-size: 1.2rem;
+	font-weight: 300;
+}
+
+.selected {
+	color: var(--Pale-Blue);
+}
+
+.icon {
+	position: absolute;
+	z-index: -1;
+	border-radius: 1rem 1rem 0 0;
+	height: 3rem;
+	width: 100%;
+}
+
+.cell-data {
+	margin-top: 2.5rem;
+	border-radius: 1rem;
+	background-color: var(--Dark-blue);
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+}
+
+.line-1,
+.line-2 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.line-1 {
+	margin-bottom: 0.7rem;
+}
+
+.line-1 h1 {
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+.line-1 h1:last-child {
+	letter-spacing: 0.1rem;
+}
+
+.line-2 h1 {
+	font-size: 2rem;
+	font-weight: 300;
+}
+
+.line-2 p {
+	font-size: 1rem;
+	font-weight: 300;
+	color: var(--Pale-Blue);
+}
+
+.work {
+	background-color: var(--Light-red-orange);
+	background-image: url("images/icon-work.svg");
+	background-repeat: no-repeat;
+	background-position-x: 95%;
+	background-position-y: 40%;
+}
+.play {
+	background-color: var(--Soft-blue);
+	background-image: url("images/icon-play.svg");
+	background-repeat: no-repeat;
+	background-position-x: 95%;
+	background-position-y: 40%;
+}
+.study {
+	background-color: var(--Light-red);
+	background-image: url("images/icon-study.svg");
+	background-repeat: no-repeat;
+	background-position-x: 95%;
+	background-position-y: 40%;
+}
+.exercise {
+	background-color: var(--Lime-green);
+	background-image: url("images/icon-exercise.svg");
+	background-repeat: no-repeat;
+	background-position-x: 95%;
+	background-position-y: 40%;
+}
+.social {
+	background-color: var(--Violet);
+	background-image: url("images/icon-social.svg");
+	background-repeat: no-repeat;
+	background-position-x: 95%;
+	background-position-y: 40%;
+}
+.selfcare {
+	background-color: var(--Soft-orange);
+	background-image: url("images/icon-self-care.svg");
+	background-repeat: no-repeat;
+	background-position-x: 95%;
+	background-position-y: 40%;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+@media (max-width: 700px) {
+	.person-data {
+		align-items: center;
+	}
+
+	.buttons {
+		align-items: center;
+	}
+
+	.line-1,
+	.line-2 {
+		align-items: center;
+	}
+}
+
+@media (min-width: 700px) {
+	body {
+		height: 100vh;
+	}
+
+	.cell {
+		width: 17rem;
+		height: 100%;
+	}
+
+	.person {
+		width: 17rem;
+		height: 100%;
+	}
+
+	.person-data {
+		padding: 3rem 2rem;
+		flex-direction: column;
+		align-items: left;
+	}
+
+	.report-name {
+		margin-left: 0;
+		margin-top: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.name {
+		font-size: 3rem;
+	}
+
+	.container {
+		display: grid;
+		/* width: 75rem; */
+		grid-template-columns: "";
+		grid-template:
+			"person work play study" 16rem
+			"person exercise social selfcare" 16rem
+			/ 1fr 1fr 1fr 1fr;
+	}
+
+	.grid-work {
+		grid-area: work;
+	}
+
+	.grid-play {
+		grid-area: play;
+	}
+	.grid-study {
+		grid-area: study;
+	}
+	.grid-exercise {
+		grid-area: exercise;
+	}
+	.grid-social {
+		grid-area: social;
+	}
+	.grid-selfcare {
+		grid-area: selfcare;
+	}
+
+	.grid-person {
+		grid-area: person;
+	}
+
+	.cell-data {
+		height: 84%;
+	}
+
+	.buttons {
+		flex-direction: column;
+		margin-top: 2.6rem;
+	}
+
+	.period-btn {
+		padding: 0.5rem 2rem;
+		text-align: left;
+	}
+
+	.line-2 {
+		flex-direction: column;
+		align-items: left;
+	}
+
+	.line-2 h1 {
+		font-size: 4rem;
+	}
+
+	.line-2 p {
+		margin-top: 1rem;
+	}
+}
